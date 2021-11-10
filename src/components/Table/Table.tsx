@@ -46,7 +46,6 @@ export const Table: FC<any> = () => {
         setCurrentPage(1)
     }
 
-    // Show loading
     if (loading) {
         return <h1 className={s.loading}>LOADING...</h1>
     }
