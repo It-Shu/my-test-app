@@ -4,7 +4,6 @@ import s from './Tasks.module.css'
 
 type TasksType = {
     tasks: TableItemsResponseType[]
-    // tasks: []
     loading: boolean
 }
 
@@ -32,6 +31,7 @@ const Tasks: FC<TasksType> = ({tasks, loading}) => {
     return (
         <div>
             {tasks.map(mapFunc)}
+            <hr/>
         </div>
     );
 };

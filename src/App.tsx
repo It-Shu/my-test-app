@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import axios, {AxiosResponse} from "axios";
 import Tasks from "./components/Tasks/Tasks";
+import {Table} from "./components/Table/Table";
 
 function App() {
     const [tasks, setTasks] = useState([])
@@ -27,7 +28,7 @@ function App() {
 
     return (
         <div className="App">
-
+            <Table/>
             <Tasks
                 tasks={currentTasks}
                 loading={loading}

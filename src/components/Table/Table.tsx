@@ -1,29 +1,21 @@
-import React, {FC, ReactNode} from 'react'
+import React from 'react'
+import s from './Table.module.css'
 
-export type TableModel = {
-    header: (index: number) => ReactNode
-    body: (data: any) => ReactNode
-}
+export const Table = () => {
 
-type TableProps = {
-    model: TableModel[]
-    data: any[]
-}
-
-export const Table: FC<TableProps> = props => {
-    const {model, data} = props
 
     return (
-        <div style={{overflowX: 'auto'}}>
+        <div >
             <table>
-                <thead>
-                <tr>{model.map((m, index) => m.header(index))}</tr>
+                <thead className={s.head}>
+                    <p>Номер / Дата</p>
+                    <p>Тип задания / Автор</p>
+                    <p>Аккаунт / Терминал</p>
+                    <p>Статус</p>
                 </thead>
 
                 <tbody>
-                {data.map((item: any, index: number) => (
-                    <tr key={'row' + (item._id || index)}>{model.map(m => m.body(item))}</tr>
-                ))}
+
                 </tbody>
             </table>
         </div>
