@@ -1,9 +1,15 @@
+.table {
+    margin-left: 500px;
+    margin-top: 200px;
+}
+
 .head {
     display: flex;
     border: solid 1px red;
-    width: 100vw;
+    width: 50vw;
     justify-content: space-around;
 }
+
 .tableData{
     text-align: left;
 }
