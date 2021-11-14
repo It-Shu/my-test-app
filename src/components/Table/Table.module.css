@@ -1,4 +1,13 @@
 .head {
     display: flex;
     border: solid 1px red;
+    width: 100vw;
+    justify-content: space-around;
+}
+.tableData{
+    text-align: left;
+}
+.order {
+
+
 }

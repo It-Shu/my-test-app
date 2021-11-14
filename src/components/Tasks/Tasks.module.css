@@ -1,1 +1,8 @@
+.tableData {
+    display: flex;
+    justify-content: space-around;
+}
 
+.column1 {
+    text-align: left;
+}

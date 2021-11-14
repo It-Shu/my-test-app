@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import axios, {AxiosResponse} from "axios";
-import Tasks from "./components/Tasks/Tasks";
 import {Table} from "./components/Table/Table";
 
 function App() {
     const [tasks, setTasks] = useState([])
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
-    const [countPerPage] = useState(10)
+    const [countPerPage] = useState(5)
 
     useEffect(() => {
         setLoading(true)
@@ -28,12 +27,10 @@ function App() {
 
     return (
         <div className="App">
-            <Table/>
-            <Tasks
-                tasks={currentTasks}
+            <Table
                 loading={loading}
+                tasks={currentTasks}
             />
-            {/*<Pagination/>*/}
         </div>
     );
 }

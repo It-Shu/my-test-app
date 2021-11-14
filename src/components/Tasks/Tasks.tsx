@@ -9,29 +9,33 @@ type TasksType = {
 
 const Tasks: FC<TasksType> = ({tasks, loading}) => {
 
-    const mapFunc = (task: TableItemsResponseType, i: number) => {
-        return  <div key={task.id || i}>
-            <div className={s.number}>
-                <div>{task.id}</div>
-                <div>{task.created_date}</div>
-            </div>
-            <div>{task.order_type.name}</div>
-            <div>{task.created_user.name}</div>
-            <div>{task.created_user.surname}</div>
-            <div>{task.account.name}</div>
-            <div>{task.terminal.name}</div>
-            <div>{task.status}</div>
-        </div>
-    }
+    // const mapFunc = (task: TableItemsResponseType, i: number) => {
+    //     return <tr key={task.id || i} className={s.tableData}>
+    //
+    //             <td className={s.column1}>{task.id}{task.created_date}</td>
+    //             {/*<td className={s.order}></td>*/}
+    //
+    //
+    //             <td className={s.order}>{task.order_type.name}</td>
+    //             <td className={s.order}>{task.created_user.name}</td>
+    //
+    //
+    //             <td className={s.order}>{task.account.name}</td>
+    //             <td className={s.order}>{task.terminal.name}</td>
+    //
+    //
+    //             <td className={s.order}>{task.status}</td>
+    //
+    //     </tr>
+    // }
 
-    if (loading) {
-        return <h2>LOADING...</h2>
-    }
+    // if (loading) {
+    //     return <h2>LOADING...</h2>
+    // }
 
     return (
         <div>
-            {tasks.map(mapFunc)}
-            <hr/>
+            {/*{tasks.map(mapFunc)}*/}
         </div>
     );
 };
