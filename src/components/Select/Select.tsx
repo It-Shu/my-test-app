@@ -1,11 +1,11 @@
 import React, {SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent, FC} from 'react'
-import s from './Select.module.css'
+
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options: number[] | string[]
-    onChangeOption?: (option: string) => void
+    options: number[]
+    onChangeOption: (option: string) => void
 }
 
 export const Select: FC<SuperSelectPropsType> = props => {
@@ -23,7 +23,7 @@ export const Select: FC<SuperSelectPropsType> = props => {
     }
 
     return (
-        <select onChange={onChangeCallback} className={s.select} {...restProps}>
+        <select onChange={onChangeCallback} {...restProps}>
             {mappedOptions}
         </select>
     )

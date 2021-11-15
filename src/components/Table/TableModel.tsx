@@ -11,18 +11,14 @@ export const tableModel = (): TableModel[] => [
                 Номер / Дата
             </th>,
         body: (item: TableItemsResponseType) =>
-            <td>
-                <div>
 
-                </div>
-                <td key={'id-cell-' + item.id}>
-                    {item.id}
-                    {/*<Link to={PATH.ORDER_PAGE + '/' + item.id}>{item.id}</Link>*/}
-                    <hr/>
-                    <td style={{color: 'grey'}}>{item.created_date}</td>
-
-                </td>
+            <td key={'id-cell-' + item.id} style={{textAlign: 'center'}}>
+                {item.id}
+                {/*<Link to={PATH.ORDER_PAGE + '/' + item.id}>{item.id}</Link>*/}
+                <br/>
+                {item.created_date}
             </td>
+
     },
     {
         header: index =>
@@ -30,14 +26,13 @@ export const tableModel = (): TableModel[] => [
                 Тип задания / Автор
             </th>,
         body: (item: TableItemsResponseType) =>
-            <td>
-                <td key={'order-cell-' + item.order_type.name}>
-                    {item.order_type.name}
-                    <hr/>
-                   <td style={{color: 'grey'}}>{item.created_user.name}</td>
-                </td>
-                {/*<td key={'name-cell-' + item.created_user.name}>{item.created_user.name}</td>*/}
+
+            <td key={'order-cell-' + item.order_type.name} style={{textAlign: 'center'}}>
+                {item.order_type.name}
+                <br/>
+                {item.created_user.name}
             </td>
+
 
     },
     {
@@ -46,14 +41,13 @@ export const tableModel = (): TableModel[] => [
                 Аккаунт / Терминал
             </th>,
         body: (item: TableItemsResponseType) =>
-            <td>
-                <td key={'account-cell-' + item.account.name}>
-                    {item.account.name}
-                    <hr/>
-                    <td style={{color: 'grey'}}>{item.terminal.name}</td>
-                </td>
-                {/*<td key={'terminal-cell-' + item.terminal.name}>{item.terminal.name}</td>*/}
+
+            <td key={'account-cell-' + item.account.name} style={{textAlign: 'center'}}>
+                {item.account.name}
+                <br/>
+                {item.terminal.name}
             </td>
+
 
     },
     {
@@ -62,6 +56,6 @@ export const tableModel = (): TableModel[] => [
                 Статус
             </th>,
         body: (item: TableItemsResponseType) =>
-            <td key={'status-cell-' + item.status}>{item.status}</td>
+            <td key={'status-cell-' + item.status} style={{textAlign: 'center'}}>{item.status}</td>
     },
 ]

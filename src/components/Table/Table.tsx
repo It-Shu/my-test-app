@@ -20,10 +20,10 @@ const Table: FC<TableType> = ({data, model}) => {
 
 
     return <table style={{overflowX: 'auto'}}>
-        <thead>
+        <thead >
         <tr>{model.map((m, index) => m.header(index))}</tr>
         </thead>
-        <tbody>
+        <tbody >
         {data.map((items: any, index) => (
             <tr key={'row' + (items.id || index)}>{model.map(m => m.body(items))}</tr>
         ) )}

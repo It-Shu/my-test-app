@@ -2,16 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {orderAPI, TableItemsResponseType} from "../../api/table-api";
 import Table from './Table';
 import {tableModel} from "./TableModel";
-
-
+import {Pagination} from "../Pagination/Pagination";
 
 
 const TableData = () => {
 
     const [data, setData] = useState<TableItemsResponseType[]>([])
     const [loading, setLoading] = useState<boolean>(false)
-    const [currentPage, setCurrentPage] = useState(1)
-    const [countPerPage] = useState(5)
+    const [currentPage, setCurrentPage] = useState<number>(1)
+    const [countPerPage] = useState<number>(5)
+
 
     useEffect(() => {
         setLoading(true)
@@ -22,19 +22,31 @@ const TableData = () => {
             })
     }, [])
 
-    const lastTaskIndex = currentPage * countPerPage
-    const firstTaskIndex = lastTaskIndex - countPerPage
-    const currentTasks = data.slice(firstTaskIndex, lastTaskIndex)
+    const lastOrderIndex = currentPage * countPerPage
+    const firstOrderIndex = lastOrderIndex - countPerPage
+    const currentOrders = data.slice(firstOrderIndex, lastOrderIndex)
+
+    // Change page
+    const paginate = (pageNumber: number ) => {
+        setCurrentPage(pageNumber)
+    }
 
     if (loading) {
         return <h1 style={{textAlign: 'center'}}>LOADING...</h1>
     }
 
 
-
     return (
-        <div>
-            <Table data={currentTasks} model={tableModel()}/>
+        <div style={{display: 'table'}}>
+            <Table data={currentOrders} model={tableModel()}/>
+
+            <Pagination
+                countPerPage={countPerPage}
+                totalOrderCount={data.length}
+                paginate={paginate}
+                currentPage={currentPage}
+            />
+            {/*<Select options={countPerPage} onChangeOption={}/>*/}
         </div>
     );
 };

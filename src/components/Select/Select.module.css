@@ -9,6 +9,6 @@
 }
 
 .select option:checked {
-    background: var(--primary);
-    color: var(--light);
+    /*background: var(--primary);*/
+    /*color: var(--light);*/
 }
