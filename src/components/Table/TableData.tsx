@@ -3,9 +3,6 @@ import {orderAPI, TableItemsResponseType} from "../../api/table-api";
 import Table from './Table';
 import {tableModel} from "./TableModel";
 import {Pagination} from "../Pagination/Pagination";
-import { Route, Routes } from 'react-router-dom';
-import {PATH, publicRoutes} from '../../routes/routes';
-import {OrderPage} from "../OrderPage/OrderPage";
 
 
 export const TableData: FC<any> = () => {
@@ -50,9 +47,6 @@ export const TableData: FC<any> = () => {
                 paginate={paginate}
                 currentPage={currentPage}
             />
-            {/*<Routes>*/}
-            {/*    {publicRoutes.map((r) => <Route key={r.path} path={r.path} element={r.element}/>)}*/}
-            {/*</Routes>*/}
             {/*<Select options={countPerPage} onChangeOption={}/>*/}
         </div>
     );

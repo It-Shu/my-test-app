@@ -12,7 +12,7 @@ const AppRoutes: FC = () => {
     return (
        <Routes>
            <Route path={PATH.HOME} element={<TableData/>} />
-           <Route path={PATH.ORDER_PAGE} element={<OrderPage />} />
+           <Route path={PATH.ORDER_PAGE_WITH_ID} element={<OrderPage />} />
            <Route path={PATH.ERROR} element={<Error />} />
        </Routes>
     );

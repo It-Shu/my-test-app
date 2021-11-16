@@ -15,7 +15,7 @@ export const tableModel = (): TableModel[] => [
         body: (item: TableItemsResponseType) =>
 
             <td key={'id-cell-' + item.id} className={s.headerTD}>
-                <NavLink to={PATH.ORDER_PAGE}>{item.id}</NavLink>
+                <NavLink to={PATH.ORDER_PAGE + '/' + item.id + '/' + item.order_type.name + '/' + item.account.name + '/' + item.status}>{item.id}</NavLink>
                 <br/>
                 {item.created_date}
             </td>
