@@ -5,6 +5,7 @@ import {TableItemsResponseType} from "../../api/table-api";
 import s from './Table.module.css'
 import { PATH } from '../../routes/routes';
 import { NavLink } from 'react-router-dom';
+import Statuses from "./Statuses";
 
 export const tableModel = (): TableModel[] => [
     {
@@ -58,6 +59,19 @@ export const tableModel = (): TableModel[] => [
                 Статус
             </th>,
         body: (item: TableItemsResponseType) =>
-            <td key={'status-cell-' + item.status} className={s.headerTD}>{item.status}</td>
+            <td key={'status-cell-' + item.status}>{
+                <Statuses data={item}/>
+                // if (item.status === 'new'){
+                //     return <td className={s.status_new}>{item.status}</td>
+                // } else if (item.status === 'completed') {
+                //     return <td className={s.status_completed}>{item.status}</td>
+                // } else if (item.status === 'assigned_to') {
+                //     return <td className={s.status_assigned_to}>{item.status}</td>
+                // } else if (item.status === 'started') {
+                //     return <td className={s.status_started}>{item.status}</td>
+                // } else if (item.status === 'declined') {
+                //     return <td className={s.status_declined}>{item.status}</td>
+                // }
+            }</td>
     },
 ]

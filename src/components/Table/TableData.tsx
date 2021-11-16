@@ -37,7 +37,7 @@ export const TableData: FC<any> = () => {
     }
 
     return (
-        <div style={{display: 'table'}}>
+        <div >
 
             <Table data={currentOrders} model={tableModel()}/>
 

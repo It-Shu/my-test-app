@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 
-export const Navbar = () => {
+export const GetTable = () => {
     return <nav >
         <div>
             <h3>This is a Test Task from Sergei Shustov</h3>

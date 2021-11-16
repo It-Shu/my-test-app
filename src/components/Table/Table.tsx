@@ -30,7 +30,7 @@ const Table: FC<TableType> = ({data, model}) => {
         <tbody className={s.tableBody}>
         {data.map((items: TableItemsResponseType, index) => (
             // <Link to={PATH.ORDER_PAGE}>
-                <tr key={'row' + (items.id || index)} className={s.active_row}>
+                <tr key={'row' + (items.id || index)} >
                     {model.map(m => m.body(items))}
                 </tr>
             // </Link>

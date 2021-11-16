@@ -26,8 +26,37 @@
     padding: 12px 15px;
 }
 
-.headerTD {
+.headerTD  {
     padding: 12px 15px;
+}
+
+.headerTD a{
+    text-decoration:none;
+    color: #00c49f
+}
+
+.status_new {
+    color: #ffffff;
+    background-color: red;
+}
+.status_completed {
+     color: #ffffff;
+    background-color: green;
+}
+
+.status_assigned_to {
+     color: #ffffff;
+    background-color: orange;
+}
+
+.status_started {
+     color: #ffffff;
+    background-color: blue;
+}
+
+.status_declined {
+     color: #ffffff;
+    background-color: black;
 }
 
 .tableBody tr {

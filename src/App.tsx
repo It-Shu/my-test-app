@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import {TableData} from "./components/Table/TableData";
 import {BrowserRouter} from "react-router-dom";
 import AppRoutes from "./AppRoutes";
-import {Navbar} from "./Navbar/Navbar";
+import {GetTable} from "./Navbar/GetTable";
 
 function App() {
 
     return (
         <BrowserRouter>
-             <Navbar/>
+             <GetTable/>
              <AppRoutes/>
         </BrowserRouter>
     );
