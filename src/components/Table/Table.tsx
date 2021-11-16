@@ -1,6 +1,11 @@
 import React, {FC, ReactNode} from 'react'
+import {NavLink} from 'react-router-dom';
+import {Routes} from 'react-router-dom';
 import {TableItemsResponseType} from '../../api/table-api';
 import s from './Table.module.css'
+import {OrderPage} from "../OrderPage/OrderPage";
+import {PATH} from '../../routes/routes';
+import {Link} from 'react-router-dom';
 
 
 export type TableModel = {
@@ -24,9 +29,13 @@ const Table: FC<TableType> = ({data, model}) => {
         </thead>
         <tbody className={s.tableBody}>
         {data.map((items: TableItemsResponseType, index) => (
-            <tr key={'row' + (items.id || index)} className={s.bodyTR}>
-                {model.map(m => m.body(items))}
-            </tr>
+            // <Link to={PATH.ORDER_PAGE}>
+                <tr key={'row' + (items.id || index)} className={s.active_row}>
+                    {model.map(m => m.body(items))}
+                </tr>
+            // </Link>
+
+
         ))}
         </tbody>
     </table>

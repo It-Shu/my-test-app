@@ -1,9 +1,14 @@
 .contentTable {
-    border: 2px solid #009879;
-    border-collapse: collapse;
-    margin: 25px 0 ;
+    display: table;
+    border-collapse: separate;
+    margin: 25px 0 0 25px ;
     font-size: 1em;
     min-width: 400px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px #6a706e;
+    border: 1px solid darkslategray;
 }
 
 .tableHead {
@@ -25,17 +30,19 @@
     padding: 12px 15px;
 }
 
-.tableBody {
-
-}
-
-.bodyTR {
+.tableBody tr {
     border-bottom: 1px solid #d5cece;
 }
-.bodyTR:nth-of-type(even) {
+
+.tableBody tr:nth-of-type(even) {
    background-color: #e4f3ed;
 }
 
-.bodyTR:last-of-type {
+.tableBody tr:last-of-type {
     border-bottom: 2px solid #009879;
+}
+
+.tableBody tr.active_row {
+font-weight: bold;
+    color: #009879;
 }

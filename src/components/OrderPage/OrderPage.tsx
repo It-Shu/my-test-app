@@ -1,17 +1,12 @@
 import React, {FC} from 'react';
 import {TableItemsResponseType} from "../../api/table-api";
 
-type OrderPageType = {
-    task?: TableItemsResponseType[]
-}
 
-const OrderPage: FC<OrderPageType> = ({task}) => {
+
+export const OrderPage: FC = () => {
     return (
         <div>
-            {/*{task}*/}
-            <p>OrderPage</p>
+           <h1>FINALLY - ORDER PAGE</h1>
         </div>
     );
 };
-
-export default OrderPage;

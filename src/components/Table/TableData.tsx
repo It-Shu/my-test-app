@@ -1,11 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {orderAPI, TableItemsResponseType} from "../../api/table-api";
 import Table from './Table';
 import {tableModel} from "./TableModel";
 import {Pagination} from "../Pagination/Pagination";
+import { Route, Routes } from 'react-router-dom';
+import {PATH, publicRoutes} from '../../routes/routes';
+import {OrderPage} from "../OrderPage/OrderPage";
 
 
-const TableData = () => {
+export const TableData: FC<any> = () => {
 
     const [data, setData] = useState<TableItemsResponseType[]>([])
     const [loading, setLoading] = useState<boolean>(false)
@@ -36,9 +39,9 @@ const TableData = () => {
         return <h1 style={{textAlign: 'center'}}>LOADING...</h1>
     }
 
-
     return (
         <div style={{display: 'table'}}>
+
             <Table data={currentOrders} model={tableModel()}/>
 
             <Pagination
@@ -47,9 +50,10 @@ const TableData = () => {
                 paginate={paginate}
                 currentPage={currentPage}
             />
+            {/*<Routes>*/}
+            {/*    {publicRoutes.map((r) => <Route key={r.path} path={r.path} element={r.element}/>)}*/}
+            {/*</Routes>*/}
             {/*<Select options={countPerPage} onChangeOption={}/>*/}
         </div>
     );
 };
-
-export default TableData;

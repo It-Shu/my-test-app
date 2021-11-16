@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom'
-import React from 'react'
+import React, { FC } from 'react'
 import {TableModel} from "./Table";
 import {TableItemsResponseType} from "../../api/table-api";
 import s from './Table.module.css'
+import { PATH } from '../../routes/routes';
+import { NavLink } from 'react-router-dom';
 
 export const tableModel = (): TableModel[] => [
     {
@@ -13,8 +15,7 @@ export const tableModel = (): TableModel[] => [
         body: (item: TableItemsResponseType) =>
 
             <td key={'id-cell-' + item.id} className={s.headerTD}>
-                {item.id}
-                {/*<Link to={PATH.ORDER_PAGE + '/' + item.id}>{item.id}</Link>*/}
+                <NavLink to={PATH.ORDER_PAGE}>{item.id}</NavLink>
                 <br/>
                 {item.created_date}
             </td>
@@ -25,8 +26,9 @@ export const tableModel = (): TableModel[] => [
             <th key={'order-title-' + index} className={s.headerTH}>
                 Тип задания / Автор
             </th>,
-        body: (item: TableItemsResponseType) =>
 
+
+        body: (item: TableItemsResponseType) =>
             <td key={'order-cell-' + item.order_type.name} className={s.headerTD}>
                 {item.order_type.name}
                 <br/>

@@ -1,22 +1,24 @@
-import {FC} from 'react'
-import OrderPage from "../components/OrderPage/OrderPage";
-import TableData from "../components/Table/TableData";
+import React, {FC} from 'react'
+import {OrderPage} from "../components/OrderPage/OrderPage";
+import {TableData} from "../components/Table/TableData";
+import {Error} from "../Error/Error";
 
 
 export enum PATH {
     ORDER_PAGE = '/orderPage',
     HOME = '/home',
+    EMPTY = '',
     ERROR = '/404',
 }
 
 type Routes = {
     path: string,
-    component: FC
+    element: FC
     exact?: boolean
 }
 
 export const publicRoutes: Routes[] = [
-    // {path: PATH.HOME, component: TableData, exact: true},
-    {path: PATH.ORDER_PAGE, component: OrderPage, exact: true},
-    // {path: PATH.ERROR, component: Error},
+    {path: PATH.HOME, element: TableData, exact: true},
+    {path: PATH.ORDER_PAGE, element: OrderPage},
+    {path: PATH.ERROR, element: Error},
 ]
