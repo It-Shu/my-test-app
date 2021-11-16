@@ -22,6 +22,7 @@ const TableData = () => {
             })
     }, [])
 
+    // Find current number of orders on the page
     const lastOrderIndex = currentPage * countPerPage
     const firstOrderIndex = lastOrderIndex - countPerPage
     const currentOrders = data.slice(firstOrderIndex, lastOrderIndex)

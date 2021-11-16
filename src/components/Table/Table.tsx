@@ -1,11 +1,11 @@
 import React, {FC, ReactNode} from 'react'
-import { TableItemsResponseType } from '../../api/table-api';
-
+import {TableItemsResponseType} from '../../api/table-api';
+import s from './Table.module.css'
 
 
 export type TableModel = {
     header: (index: number) => ReactNode
-    body: (data: any) => ReactNode
+    body: (data: TableItemsResponseType) => ReactNode
 }
 
 
@@ -18,36 +18,21 @@ type TableType = {
 const Table: FC<TableType> = ({data, model}) => {
 
 
-
-    return <table style={{overflowX: 'auto'}}>
-        <thead >
-        <tr>{model.map((m, index) => m.header(index))}</tr>
+    return <table className={s.contentTable}>
+        <thead className={s.tableHead}>
+        <tr className={s.headTR}>{model.map((m, index) => m.header(index))}</tr>
         </thead>
-        <tbody >
-        {data.map((items: any, index) => (
-            <tr key={'row' + (items.id || index)}>{model.map(m => m.body(items))}</tr>
-        ) )}
-
+        <tbody className={s.tableBody}>
+        {data.map((items: TableItemsResponseType, index) => (
+            <tr key={'row' + (items.id || index)} className={s.bodyTR}>
+                {model.map(m => m.body(items))}
+            </tr>
+        ))}
         </tbody>
     </table>
 };
 
 export default Table;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // import s from './Table.module.css'
