@@ -61,7 +61,7 @@ export const tableModel = (): TableModel[] => [
                 Статус
             </th>,
         body: (item: TableItemsResponseType) =>
-            <td key={'status-cell-' + item.status}>{
+            <td key={'status-cell-' + item.status} className={s.bodyTD}>{
                 <Statuses data={item}/>
             }</td>
     },

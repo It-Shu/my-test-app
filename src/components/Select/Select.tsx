@@ -11,9 +11,9 @@ type SuperSelectPropsType = DefaultSelectPropsType & {
 export const Select: FC<SuperSelectPropsType> = props => {
     const {options, onChange, onChangeOption, ...restProps} = props
 
-    const mappedOptions = options ? options.map(option => (
-        <option key={option} value={option}>
-            {option}
+    const mappedOptions = options ? options.map(op => (
+        <option key={op} value={op}>
+            {op}
         </option>
     )) : []
 
