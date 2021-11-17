@@ -1,5 +1,5 @@
 import React from 'react'
-
+import s from './Pagination.module.css'
 
 type PaginationPropsType = {
     totalOrderCount: any
@@ -8,10 +8,7 @@ type PaginationPropsType = {
     currentPage: number
 }
 
-export const Pagination = ({countPerPage, totalOrderCount, paginate, currentPage}: PaginationPropsType) => {
-
-    // const [prevIsHidden, setPrevIsHidden] = useState(false)
-    // const [nextIsHidden, setNextIsHidden] = useState(false)
+export const Pagination = ({countPerPage, totalOrderCount, paginate}: PaginationPropsType) => {
 
     let pageNumbers: number[] = []
 
@@ -19,56 +16,16 @@ export const Pagination = ({countPerPage, totalOrderCount, paginate, currentPage
         pageNumbers.push(i)
     }
 
-    // const previousPage = currentPage !== 1 ? currentPage - 1 : 1
-    // const nextPage = currentPage !== pageNumbers ? currentPage + 1 : pageNumbers
-    // let pageNextStep = (currentPage + step) > pageNumbers ? pageNumbers : currentPage + step
-    // let pagePreviousStep = (currentPage - step) < 1 ? 1 : currentPage - step
-    //
-    // useEffect(() => {
-    //     previousPage === currentPage ? setPrevIsHidden(true) : setPrevIsHidden(false)
-    //     nextPage === currentPage ? setNextIsHidden(true) : setNextIsHidden(false)
-    // }, [currentPage, nextPage, previousPage])
-    //
-    // if (isNaN(pageNumbers) || totalCount === 0 || pageNumbers === 1) {
-    //     return <></>
-    // }
-
     return (
 
-    <nav>
-        <div style={{marginTop: '40px'}}>
-            <span onClick={() => pageNumbers.map(p => p - 1)}>{'<'}</span>
+        <div className={s.pagination}>
+            {/*<span onClick={() => pageNumbers.map(p => p - 1)}>{'<'}</span>*/}
             {pageNumbers.map(n => (
-                <span key={n} style={{paddingLeft: '20px'}}>
-                    <span onClick={()=> paginate(n)}>{n}</span>
+                <span key={n} style={{paddingLeft: '10px'}} className={s.pageNumber}>
+                    <button onClick={()=> paginate(n)} className={s.number}>{n}</button>
                 </span>
             ))}
-            <span onClick={() => pageNumbers.map(p => p + 1)} style={{paddingLeft: '20px'}}>{'>'}</span>
+            {/*<span onClick={() => pageNumbers.map(p => p + 1)} style={{paddingLeft: '20px'}}>{'>'}</span>*/}
         </div>
-
-
-
-            {/*<span className={`${prevIsHidden && s.hidden}`}*/}
-            {/*      onClick={() => onChange(1)}>Start</span>*/}
-
-            {/*<span className={`${prevIsHidden && s.hidden}`}*/}
-            {/*      onClick={() => onChange(pagePreviousStep)}>{'<<'}</span>*/}
-
-            {/*<span className={`${prevIsHidden && s.hidden}`}*/}
-            {/*      onClick={() => onChange(previousPage)}>{previousPage !== currentPage && previousPage}</span>*/}
-
-            {/*<span className={s.active}>{currentPage}</span>*/}
-
-            {/*<span className={`${nextIsHidden && s.hidden}`}*/}
-            {/*      onClick={() => onChange(nextPage)}>{nextPage !== currentPage && nextPage}</span>*/}
-
-            {/*<span className={`${nextIsHidden && s.hidden}`}*/}
-            {/*      onClick={() => onChange(pageNextStep)}>{'>>'}</span>*/}
-
-            {/*<span className={`${nextIsHidden && s.hidden}`}*/}
-            {/*      onClick={() => onChange(pageNumbers)}>End</span>*/}
-
-
-    </nav>
     )
 }

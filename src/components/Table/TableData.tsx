@@ -17,8 +17,10 @@ export const TableData: FC<any> = () => {
         setLoading(true)
         orderAPI.getOrder()
             .then((res) => {
-                setData(res.data)
-                setLoading(false)
+                setTimeout(()=> {
+                    setData(res.data)
+                    setLoading(false)
+                }, 2000)
             })
     }, [])
 
@@ -37,8 +39,7 @@ export const TableData: FC<any> = () => {
     }
 
     return (
-        <div >
-
+        <div>
             <Table data={currentOrders} model={tableModel()}/>
 
             <Pagination

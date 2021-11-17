@@ -14,13 +14,13 @@ const Statuses: FC<StatusesType> = ({data}) => {
         if (data.status === 'new') {
             return <td key={st} className={s.status_new}>{data.status}</td>
         } else if (data.status === 'assigned_to') {
-            return <td className={s.status_assigned_to}>{data.status}</td>
+            return <td key={st} className={s.status_assigned_to}>{data.status}</td>
         } else if (data.status === 'completed') {
-            return <td className={s.status_completed}>{data.status}</td>
+            return <td key={st} className={s.status_completed}>{data.status}</td>
         } else if (data.status === 'started') {
-            return <td className={s.status_started}>{data.status}</td>
+            return <td key={st} className={s.status_started}>{data.status}</td>
         } else if (data.status === 'declined') {
-            return <td className={s.status_declined}>{data.status}</td>
+            return <td key={st} className={s.status_declined}>{data.status}</td>
         }
     }
 
