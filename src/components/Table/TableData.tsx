@@ -37,6 +37,7 @@ export const TableData: FC<any> = () => {
 
     const onSelectChangeHandler = (option: string) => {
         setCountPerPage(option)
+        setCurrentPage(1)
     }
 
 
