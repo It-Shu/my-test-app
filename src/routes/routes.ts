@@ -1,7 +1,7 @@
-import React, {FC} from 'react'
-import {OrderPage} from "../components/OrderPage/OrderPage";
+import {FC} from 'react'
+import {OrderPage} from "../pages/OrderPage/OrderPage";
 import {TableData} from "../components/Table/TableData";
-import {Error} from "../Error/Error";
+import {Error} from "../pages/Error/Error";
 
 
 export enum PATH {

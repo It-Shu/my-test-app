@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import s from './GetTable.module.css'
+import s from './StartPage.module.css'
 
-export const GetTable = () => {
+export const StartPage = () => {
     return <div className={s.startPage}>
             <h3>Test Task from Sergei Shustov</h3>
             <NavLink to={'/home'}>
