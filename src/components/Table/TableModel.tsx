@@ -14,7 +14,7 @@ export const tableModel = (): TableModel[] => [
             </th>,
         body: (item: TableItemsResponseType) =>
 
-            <td key={'id-cell-' + item.id} className={s.headerTD}>
+            <td key={'id-cell-' + item.id} className={s.bodyTD}>
                 <NavLink
                     to={PATH.ORDER_PAGE + '/' + item.id + '/' + item.order_type.name + '/' + item.account.name + '/' + item.status}>
                     {item.id}
@@ -32,7 +32,7 @@ export const tableModel = (): TableModel[] => [
 
 
         body: (item: TableItemsResponseType) =>
-            <td key={'order-cell-' + item.order_type.name} className={s.headerTD}>
+            <td key={'order-cell-' + item.order_type.name} className={s.bodyOrderTD}>
                 {item.order_type.name}
                 <br/>
                 {item.created_user.name}
@@ -47,11 +47,11 @@ export const tableModel = (): TableModel[] => [
             </th>,
         body: (item: TableItemsResponseType) =>
 
-            <td key={'account-cell-' + item.account.name} className={s.headerTD}>
-                {item.account.name}
-                <br/>
-                {item.terminal.name}
-            </td>
+            <tr key={'account-cell-' + item.account.name} className={s.bodyTD}>
+               <td className={s.accountTerminal}>{item.account.name}</td>
+
+                <td className={s.accountTerminal}>{item.terminal.name}</td>
+            </tr>
 
 
     },

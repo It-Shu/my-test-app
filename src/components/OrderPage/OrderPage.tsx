@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {useParams} from "react-router-dom";
+import s from './OrderPage.module.css'
 
 
 export const OrderPage: FC = () => {
@@ -8,12 +9,15 @@ export const OrderPage: FC = () => {
 
 
     return (
-        <div>
+        <div >
            <h1>ORDER PAGE</h1>
-            <div>{id}</div>
-            <div>{order_type}</div>
-            <div>{account}</div>
-            <div>{status}</div>
+            <div className={s.orderPage}>
+                <div className={s.orderItem}>{id}</div>
+                <div className={s.orderItem}>{order_type}</div>
+                <div className={s.orderItem}>{account}</div>
+                <div className={s.orderItem}>{status}</div>
+            </div>
+
         </div>
     );
 };
