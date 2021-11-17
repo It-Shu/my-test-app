@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import { Route, Routes} from 'react-router-dom';
-import {PATH} from './routes/routes';
-import {OrderPage} from "./components/OrderPage/OrderPage";
-import {TableData} from "./components/Table/TableData";
-import {Error} from "./Error/Error";
+import {PATH} from '../routes/routes';
+import {OrderPage} from "../components/OrderPage/OrderPage";
+import {TableData} from "../components/Table/TableData";
+import {Error} from "../Error/Error";
 
 
 
