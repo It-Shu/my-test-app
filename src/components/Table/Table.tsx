@@ -63,7 +63,7 @@ export const Table: FC<any> = () => {
                         onChange={paginate}
                     />
                 </div>
-                <div>
+                <div className={s.selectGroup}>
                     <span className={s.span}>по</span>
                     <Select options={selectPages} onChangeOption={onSelectChangeHandler}/>
                     <span className={s.span2}>записей</span>

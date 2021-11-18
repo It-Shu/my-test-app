@@ -4,7 +4,7 @@ import {PATH} from '../routes/routes';
 import {OrderPage} from "../pages/OrderPage/OrderPage";
 import {Table} from "../components/Table/Table";
 import {Error} from "../pages/Error/Error";
-import {GreetingPage} from "../pages/StartPage/GreetingPage";
+import {GreetingPage} from "../pages/GreetingPage/GreetingPage";
 
 
 

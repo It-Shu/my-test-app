@@ -31,13 +31,22 @@ export const Pagination = ({totalCount, countPerPage, currentPage, onChange, ste
     return (
         <div className={s.container}>
             {/*<button onClick={() => onChange(1)}>Start</button>*/}
-            <button onClick={() => onChange(previousPage)} className={s.button}>{'<'}</button>
-            <button onClick={() => onChange(pagePreviousStep)} className={s.button}>{'<<'}</button>
+            <button onClick={() => onChange(previousPage)} className={s.button}>
+                <p className={s.arrowLeft}></p>
+            </button>
+            <button onClick={() => onChange(pagePreviousStep)} className={s.button}>
+                <p className={s.doubleArrowLeft}></p>
+                <p className={s.doubleArrowLeft}></p>
+            </button>
 
             <span className={s.currentPageScreen}>{currentPage}</span>
 
-            <button onClick={() => onChange(pageNextStep)} className={s.button}>{'>>'}</button>
-            <button onClick={() => onChange(nextPage)} className={s.button}>{'>'}</button>
+            <button onClick={() => onChange(pageNextStep)} className={s.button}>
+                <p className={s.doubleArrowRight}></p>
+                <p className={s.doubleArrowRight}></p></button>
+            <button onClick={() => onChange(nextPage)} className={s.button}>
+                <p className={s.arrowRight}></p>
+            </button>
             {/*<button onClick={() => onChange(pageNumbers)}>End</button>*/}
         </div>
     )
