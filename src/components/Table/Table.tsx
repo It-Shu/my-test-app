@@ -24,7 +24,7 @@ export const Table: FC<any> = () => {
                 setTimeout(() => {
                     setData(res.data)
                     setLoading(false)
-                }, 1000)
+                }, 500)
             })
     }, [])
 
