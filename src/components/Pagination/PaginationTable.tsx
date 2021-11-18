@@ -9,11 +9,6 @@ type PaginationProps = {
     step?: number
 }
 
-// const sass = require('sass'); // or require('node-sass');
-//
-// const result = sass.renderSync({file: "style.scss"});
-// console.log(result.css.toString());
-
 export const Pagination = ({totalCount, countPerPage, currentPage, onChange, step = 5}: PaginationProps) => {
 
     let pageNumbers: number = Math.ceil(totalCount / +(countPerPage))
