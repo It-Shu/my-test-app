@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import s from "./Table.module.css";
-import {TableItemsResponseType} from "../../api/table-api";
+import s from "./Statuses.module.sass";
+import {TableItemsResponseType} from "../../../api/table-api";
 
 type StatusesType = {
     data: TableItemsResponseType

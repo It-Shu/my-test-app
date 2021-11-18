@@ -1,6 +1,11 @@
+.title {
+    text-align: center;
+    color: #009879
+}
+
 .orderPage {
     display: flex;
-    border: solid 2px #59b6a0;
+    border: solid 1px #59b6a0;
     width: 50%;
     margin: auto;
 }

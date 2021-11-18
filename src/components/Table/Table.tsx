@@ -1,35 +1,74 @@
-import React, {FC, ReactNode} from 'react'
-import {TableItemsResponseType} from '../../api/table-api';
-import s from './Table.module.css'
+import React, {FC, useEffect, useState} from 'react';
+import {orderAPI, TableItemsResponseType} from "../../api/table-api";
+import TableData from './TableData/TableData';
+import {tableModel} from "./TableModel/TableModel";
+import {Pagination} from "../Pagination/PaginationTable";
+import {Select} from "../Select/Select";
+import s from './Table.module.sass'
+
+export const Table: FC<any> = () => {
+
+    // local state
+    const [data, setData] = useState<TableItemsResponseType[]>([])
+    const [loading, setLoading] = useState<boolean>(false)
+    const [currentPage, setCurrentPage] = useState<number>(1)
+    const [countPerPage, setCountPerPage] = useState<number | string>(10)
+    const [selectPages] = useState<number[]>([10, 25, 50])
 
 
-export type TableModel = {
-    header: (index: number) => ReactNode
-    body: (data: TableItemsResponseType) => ReactNode
-}
+    // Response
+    useEffect(() => {
+        setLoading(true)
+        orderAPI.getOrder()
+            .then((res) => {
+                setTimeout(() => {
+                    setData(res.data)
+                    setLoading(false)
+                }, 1000)
+            })
+    }, [])
 
 
-type TableType = {
-    model: TableModel[]
-    data: TableItemsResponseType[]
-}
+    // Find current number of orders on the page
+    const lastOrderIndex = currentPage * +(countPerPage)
+    const firstOrderIndex = lastOrderIndex - +(countPerPage)
+    const currentOrders = data.slice(firstOrderIndex, lastOrderIndex)
 
+    // Change page
+    const paginate = (pageNumber: number) => {
+        setCurrentPage(pageNumber)
+    }
 
-const Table: FC<TableType> = ({data, model}) => {
+    // Show selected current order count
+    const onSelectChangeHandler = (option: string) => {
+        setCountPerPage(option)
+        setCurrentPage(1)
+    }
 
+    // Show loading
+    if (loading) {
+        return <h1 style={{textAlign: 'center'}}>LOADING...</h1>
+    }
 
-    return <table className={s.contentTable}>
-        <thead className={s.tableHead}>
-        <tr className={s.headTR}>{model.map((m, index) => m.header(index))}</tr>
-        </thead>
-        <tbody className={s.tableBody}>
-        {data.map((items: TableItemsResponseType, index) => (
-                <tr key={'row' + (items.id || index)} >
-                    {model.map(m => m.body(items))}
-                </tr>
-        ))}
-        </tbody>
-    </table>
+    return (
+        <div>
+            <TableData data={currentOrders} model={tableModel()}/>
+
+            <div className={s.paginationBlock}>
+                <div className={s.pagination}>
+                    <Pagination
+                        totalCount={data.length}
+                        currentPage={currentPage}
+                        countPerPage={countPerPage}
+                        onChange={paginate}
+                    />
+                </div>
+                <div>
+                    <span className={s.span}>по</span>
+                    <Select options={selectPages} onChangeOption={onSelectChangeHandler}/>
+                    <span className={s.span2}>записей</span>
+                </div>
+            </div>
+        </div>
+    );
 };
-
-export default Table;
