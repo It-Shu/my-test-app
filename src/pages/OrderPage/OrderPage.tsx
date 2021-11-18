@@ -7,10 +7,13 @@ export const OrderPage: FC = () => {
 
     const {id, order_type, account, status} = useParams()
 
-
+    const back = () => {
+        return window.history.back()
+    }
     return (
         <>
             <h1 className={s.title}>ORDER PAGE</h1>
+            <button onClick={back} className={s.button}><p className={s.arrowLeft}></p></button>
             <table className={s.contentTable}>
                 <thead>
                 <tr className={s.headTR}>
