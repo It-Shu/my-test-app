@@ -51,7 +51,7 @@ export const Table: FC<any> = () => {
     }
 
     return (
-        <div>
+        <div className={s.table}>
             <TableData data={currentOrders} model={tableModel()}/>
 
             <div className={s.paginationBlock}>
