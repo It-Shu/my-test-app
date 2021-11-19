@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import s from "./Statuses.module.sass";
 import {TableItemsResponseType} from "../../../api/table-api";
+import {NavLink} from "react-router-dom";
+import {PATH} from "../../../routes/routes";
 
 type StatusesType = {
     data: TableItemsResponseType
@@ -25,9 +27,9 @@ const Statuses: FC<StatusesType> = ({data}) => {
     }
 
     return (
-        <>
+        <NavLink to={PATH.ORDER_PAGE+ '/' + data.id + '/' + data.order_type.name + '/' + data.account.name + '/' + data.status}>
             {statusArr.map(MapStatuses)}
-        </>
+        </NavLink>
     );
 };
 

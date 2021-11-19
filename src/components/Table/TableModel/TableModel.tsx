@@ -13,6 +13,7 @@ export const tableModel = (): TableModel[] => [
             <th key={'id-title-' + index} className={ss.headerTH}>
                 Номер / Дата
             </th>,
+
         body: (item: TableItemsResponseType) =>
 
             <td key={'id-cell-' + item.id} className={ss.bodyTD}>
@@ -21,7 +22,11 @@ export const tableModel = (): TableModel[] => [
                     {item.id}
                 </NavLink>
                 <br/>
-                {item.created_date}
+                <NavLink
+                    to={PATH.ORDER_PAGE + '/' + item.id + '/' + item.order_type.name + '/' + item.account.name + '/' + item.status}>
+                    {item.created_date}
+                </NavLink>
+
             </td>
     },
     {
