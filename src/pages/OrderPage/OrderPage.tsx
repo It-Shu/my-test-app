@@ -5,14 +5,9 @@ import {useNavigate} from "react-router-dom";
 import {PATH} from "../../routes/routes";
 
 
-
 export const OrderPage: FC = () => {
 
     const {id, order_type, account, status} = useParams()
-
-    // const back = () => {
-    //     return window.history.back()
-    // }
 
     let navigate = useNavigate()
     const back = () => {
@@ -43,21 +38,6 @@ export const OrderPage: FC = () => {
             </table>
         </>
 
-    // <div>
-    //     <div className={s.orderPage}>
-    //         <div className={s.orderItem}>Номер</div>
-    //         <div className={s.orderItem}>Тип задания</div>
-    //         <div className={s.orderItem}>Аккаунт</div>
-    //         <div className={s.orderItem}>Статус</div>
-    //     </div>
-    //     <div className={s.orderPage}>
-    //         <div className={s.orderItem}>{id}</div>
-    //         <div className={s.orderItem}>{order_type}</div>
-    //         <div className={s.orderItem}>{account}</div>
-    //         <div className={s.orderItem}>{status}</div>
-    //     </div>
-    //
-    // </div>
-)
-    ;
+
+    )
 };

@@ -7,7 +7,6 @@ import {NavLink} from 'react-router-dom';
 import Statuses from "../Statuses/Statuses";
 
 
-
 export const tableModel = (): TableModel[] => [
     {
         header: index =>
@@ -22,7 +21,7 @@ export const tableModel = (): TableModel[] => [
                     {item.id}
                 </NavLink>
                 <br/>
-               {item.created_date}
+                {item.created_date}
             </td>
     },
     {
@@ -45,7 +44,7 @@ export const tableModel = (): TableModel[] => [
         body: (item: TableItemsResponseType) =>
 
             <tr key={'account-cell-' + item.account.name} className={ss.bodyTD}>
-               <td className={ss.accountTerminal}>{item.account.name}</td>
+                <td className={ss.accountTerminal}>{item.account.name}</td>
 
                 <td className={ss.accountTerminal}>{item.terminal.name}</td>
             </tr>

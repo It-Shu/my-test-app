@@ -6,15 +6,14 @@ import {Table} from "../components/Table/Table";
 import {GreetingPage} from "../pages/GreetingPage/GreetingPage";
 
 
-
 const AppRoutes: FC = () => {
 
     return (
-       <Routes>
-           <Route key={PATH.EMPTY} path={PATH.EMPTY} element={<GreetingPage/>} />
-           <Route path={PATH.HOME} element={<Table/>} />
-           <Route path={PATH.ORDER_PAGE_WITH_DATA} element={<OrderPage />} />
-       </Routes>
+        <Routes>
+            <Route key={PATH.EMPTY} path={PATH.EMPTY} element={<GreetingPage/>}/>
+            <Route path={PATH.HOME} element={<Table/>}/>
+            <Route path={PATH.ORDER_PAGE_WITH_DATA} element={<OrderPage/>}/>
+        </Routes>
     );
 };
 

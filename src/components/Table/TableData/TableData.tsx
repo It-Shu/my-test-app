@@ -23,9 +23,9 @@ const TableData: FC<TableType> = ({data, model}) => {
         </thead>
         <tbody className={s.tableBody}>
         {data.map((items: TableItemsResponseType, index) => (
-                <tr key={'row' + (items.id || index)} className={s.bodyRow}>
-                    {model.map(m => m.body(items))}
-                </tr>
+            <tr key={'row' + (items.id || index)} className={s.bodyRow}>
+                {model.map(m => m.body(items))}
+            </tr>
         ))}
         </tbody>
     </table>
