@@ -1,3 +1,6 @@
+$background-color-hover:  #82deb6
+$background-color-basic:  #009879
+
 .contentTable
   display: table
   border-collapse: separate
@@ -12,10 +15,10 @@
 
 .title
   text-align: center
-  color: #009879
+  color: $background-color-basic
 
 .headTR
-  background-color: #009879
+  background-color: $background-color-basic
   color: #fff
   text-align: left
   font-weight: bold
@@ -25,13 +28,13 @@
   tr:nth-of-type(even)
     background-color: #e4f3ed
     &:hover
-      background-color: #82deb6
+      background-color: $background-color-hover
 
 .arrowLeft
     width: 10px
     height: 10px
-    border-top: 3px solid #009879
-    border-right: 3px solid #009879
+    border-top: 3px solid $background-color-basic
+    border-right: 3px solid $background-color-basic
     transform: rotate(-135deg)
 
 
@@ -48,13 +51,13 @@
   transition-duration: 0.4s
 
   &:hover
-    background-color: #82deb6
+    background-color: $background-color-hover
 
 .bodyRow
   transition-duration: 0.4s
 
   &:hover
-    background-color: #82deb6
+    background-color: $background-color-hover
 
 .navRow
   text-decoration: none

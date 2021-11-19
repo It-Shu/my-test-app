@@ -1,7 +1,10 @@
+$background-color-light:  #e4f3ed
+$background-color-border:  #96e0bf
+$background-color-basic:  #009879
+
+
 .container
     display: flex
-
-
 
 .button
     display: flex
@@ -12,8 +15,8 @@
     cursor: pointer
     padding-left: 20px
     padding-right: 20px
-    background-color: #e4f3ed
-    border: solid 1px #96e0bf
+    background-color: $background-color-light
+    border: solid 1px $background-color-border
     -moz-user-focus: inherit
     transition-duration: 0.4s
 
@@ -26,34 +29,34 @@
     align-items: center
     min-width: 40px
     min-height: 40px
-    background-color: #e4f3ed
-    border: solid 1px #96e0bf
+    background-color: $background-color-light
+    border: solid 1px $background-color-border
     font-size: 25px
 
 .arrowLeft
     width: 10px
     height: 10px
-    border-top: 3px solid #009879
-    border-right: 3px solid #009879
+    border-top: 3px solid $background-color-basic
+    border-right: 3px solid $background-color-basic
     transform: rotate(-135deg)
 
 .doubleArrowLeft
     width: 10px
     height: 10px
-    border-top: 3px solid #009879
-    border-right: 3px solid #009879
+    border-top: 3px solid $background-color-basic
+    border-right: 3px solid $background-color-basic
     transform: rotate(-135deg)
 
 .doubleArrowRight
     width: 10px
     height: 10px
-    border-top: 3px solid #009879
-    border-right: 3px solid #009879
+    border-top: 3px solid $background-color-basic
+    border-right: 3px solid $background-color-basic
     transform: rotate(45deg)
 
 .arrowRight
     width: 10px
     height: 10px
-    border-top: 3px solid #009879
-    border-right: 3px solid #009879
+    border-top: 3px solid $background-color-basic
+    border-right: 3px solid $background-color-basic
     transform: rotate(45deg)
