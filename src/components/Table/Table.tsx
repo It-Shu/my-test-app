@@ -2,7 +2,7 @@ import React, {FC, useEffect, useState} from 'react';
 import {orderAPI, TableItemsResponseType} from "../../api/table-api";
 import TableData from './TableData/TableData';
 import {tableModel} from "./TableModel/TableModel";
-import {Pagination} from "../Pagination/PaginationTable";
+import {Pagination} from "../Pagination/Pagination";
 import {Select} from "../Select/Select";
 import s from './Table.module.sass'
 

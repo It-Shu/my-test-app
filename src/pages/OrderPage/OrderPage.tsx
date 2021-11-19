@@ -1,15 +1,24 @@
 import React, {FC} from 'react';
 import {useParams} from "react-router-dom";
 import s from '../../components/Table/TableData/TableData.module.sass'
+import {useNavigate} from "react-router-dom";
+import {PATH} from "../../routes/routes";
+
 
 
 export const OrderPage: FC = () => {
 
     const {id, order_type, account, status} = useParams()
 
+    // const back = () => {
+    //     return window.history.back()
+    // }
+
+    let navigate = useNavigate()
     const back = () => {
-        return window.history.back()
+        navigate(PATH.HOME)
     }
+
     return (
         <>
             <h1 className={s.title}>ORDER PAGE</h1>

@@ -25,7 +25,7 @@ export const Pagination = ({totalCount, countPerPage, currentPage, onChange, ste
 
     return (
         <div className={s.container}>
-            {/*<button onClick={() => onChange(1)}>Start</button>*/}
+            <button onClick={() => onChange(1)} className={s.button}>Start</button>
             <button onClick={() => onChange(previousPage)} className={s.button}>
                 <p className={s.arrowLeft}></p>
             </button>
@@ -42,7 +42,7 @@ export const Pagination = ({totalCount, countPerPage, currentPage, onChange, ste
             <button onClick={() => onChange(nextPage)} className={s.button}>
                 <p className={s.arrowRight}></p>
             </button>
-            {/*<button onClick={() => onChange(pageNumbers)}>End</button>*/}
+            <button onClick={() => onChange(pageNumbers)} className={s.button}>End</button>
         </div>
     )
 }
