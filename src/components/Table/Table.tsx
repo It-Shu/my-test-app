@@ -47,7 +47,7 @@ export const Table: FC<any> = () => {
 
     // Show loading
     if (loading) {
-        return <h1 style={{textAlign: 'center'}}>LOADING...</h1>
+        return <h1 className={s.loading}>LOADING...</h1>
     }
 
     return (
