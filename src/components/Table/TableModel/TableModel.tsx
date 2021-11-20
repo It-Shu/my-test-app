@@ -23,7 +23,7 @@ export const tableModel = (): TableModel[] => [
                     {item.id}
                 </NavLink>
                 <br/>
-                    {new Date(item.created_date).toString()}
+                    {new Date(item.created_date).toDateString()}
 
             </td>
     },
