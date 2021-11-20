@@ -21,9 +21,11 @@ export const tableModel = (): TableModel[] => [
                 <NavLink
                     to={PATH.ORDER_PAGE + '/' + item.id + '/' + item.order_type.name + '/' + item.account.name + '/' + item.status}>
                     {item.id}
-                </NavLink>
-                <br/>
+                    <br/>
                     {new Date(item.created_date).toLocaleString()}
+                </NavLink>
+                {/*<br/>*/}
+
 
             </td>
     },

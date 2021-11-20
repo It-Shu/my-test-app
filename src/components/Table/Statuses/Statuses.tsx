@@ -27,7 +27,7 @@ const Statuses: FC<StatusesType> = ({data}) => {
     }
 
     return (
-        <NavLink to={PATH.ORDER_PAGE+ '/' + data.id + '/' + data.order_type.name + '/' + data.account.name + '/' + data.status}>
+        <NavLink to={PATH.ORDER_PAGE+ '/' + data.id + '/' + data.order_type.name + '/' + data.account.name + '/' + data.status} className={s.navStatus}>
             {statusArr.map(MapStatuses)}
         </NavLink>
     );
