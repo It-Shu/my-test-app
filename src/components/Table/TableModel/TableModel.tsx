@@ -24,7 +24,6 @@ export const tableModel = (): TableModel[] => [
                     <br/>
                     {new Date(item.created_date).toLocaleString()}
                 </NavLink>
-                {/*<br/>*/}
 
 
             </td>
