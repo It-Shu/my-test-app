@@ -23,7 +23,7 @@ export const tableModel = (): TableModel[] => [
                     {item.id}
                 </NavLink>
                 <br/>
-                    {new Date(item.created_date).toDateString()}
+                    {new Date(item.created_date).toLocaleString()}
 
             </td>
     },
@@ -63,3 +63,4 @@ export const tableModel = (): TableModel[] => [
             }</td>
     },
 ]
+
