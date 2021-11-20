@@ -12,11 +12,11 @@ export type TableModel = {
 type TableType = {
     model: TableModel[]
     data: TableItemsResponseType[]
+
 }
 
 
 const TableData: FC<TableType> = ({data, model}) => {
-
     return <table className={s.contentTable}>
         <thead>
         <tr className={s.headTR}>{model.map((m, index) => m.header(index))}</tr>

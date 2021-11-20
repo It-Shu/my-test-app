@@ -14,6 +14,7 @@ export const OrderPage: FC = () => {
         navigate(PATH.HOME)
     }
 
+
     return (
         <>
             <h1 className={s.title}>ORDER PAGE</h1>

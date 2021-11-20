@@ -7,6 +7,7 @@ import {NavLink} from 'react-router-dom';
 import Statuses from "../Statuses/Statuses";
 
 
+
 export const tableModel = (): TableModel[] => [
     {
         header: index =>
@@ -22,10 +23,7 @@ export const tableModel = (): TableModel[] => [
                     {item.id}
                 </NavLink>
                 <br/>
-                <NavLink
-                    to={PATH.ORDER_PAGE + '/' + item.id + '/' + item.order_type.name + '/' + item.account.name + '/' + item.status}>
-                    {item.created_date}
-                </NavLink>
+                    {new Date(item.created_date).toString()}
 
             </td>
     },
