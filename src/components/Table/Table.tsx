@@ -16,7 +16,7 @@ export const Table: FC<any> = () => {
     const [selectPages] = useState<number[]>([10, 25, 50])
 
 
-    // Response
+    // Request
     useEffect(() => {
         setLoading(true)
         orderAPI.getOrder()

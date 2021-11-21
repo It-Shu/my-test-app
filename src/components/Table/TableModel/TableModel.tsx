@@ -7,7 +7,6 @@ import {NavLink} from 'react-router-dom';
 import Statuses from "../Statuses/Statuses";
 
 
-
 export const tableModel = (): TableModel[] => [
     {
         header: index =>
