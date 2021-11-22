@@ -28,7 +28,6 @@ export const Table: FC<any> = () => {
             })
     }, [])
 
-
     // Find current number of orders on the page
     const lastOrderIndex = currentPage * +(countPerPage)
     const firstOrderIndex = lastOrderIndex - +(countPerPage)
