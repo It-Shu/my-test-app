@@ -8,6 +8,7 @@ import Statuses from "../Statuses/Statuses";
 
 
 export const tableModel = (): TableModel[] => [
+
     {
         header: index =>
             <th key={'id-title-' + index} className={s.headerTH}>
@@ -27,6 +28,7 @@ export const tableModel = (): TableModel[] => [
 
             </td>
     },
+
     {
         header: index =>
             <th key={'order-title-' + index} className={s.headerTH}>
@@ -39,6 +41,7 @@ export const tableModel = (): TableModel[] => [
                 {item.created_user.name}
             </td>
     },
+
     {
         header: index =>
             <th key={'account-title-' + index} className={s.headerTH}>
@@ -52,6 +55,7 @@ export const tableModel = (): TableModel[] => [
                 <td className={s.accountTerminal}>{item.terminal.name}</td>
             </tr>
     },
+
     {
         header: index =>
             <th key={'status-title-' + index} className={s.headerTH}>
